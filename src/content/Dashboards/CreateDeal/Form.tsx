@@ -42,7 +42,7 @@ function CreateForm({ setList, open, createDeal, setOpen2, }) {
   })
 
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setCurrency(e.target.value);
   };
 
@@ -163,26 +163,27 @@ function CreateForm({ setList, open, createDeal, setOpen2, }) {
             </Box>
 
           </CardContent>
-          <Button variant='contained' sx={{ width: "78%", color: "white" }} onClick={(e) => {
-            handleSubmit(e)
-            setList((pre) => {
-              return [...pre, {
-                id: '1',
-                orderDetails: 'Owner',
-                createdBy: 'Khushboo',
-                orderDate: new Date().getTime(),
-                status: 'failed',
-                consultant: "",
-                orderID: 'Term Loan',
-                sourceName: 'Bank Account',
-                sourceDesc: '*** 1111',
-                amountCrypto: ' ',
-                cryptoCurrency: '0',
-                currency: '₹',
-                ...data
-              }]
-            })
-          }}
+          <Button variant='contained' sx={{ width: "78%", color: "white" }}
+            onClick={() => {
+              handleSubmit()
+              setList((pre) => {
+                return [...pre, {
+                  id: '1',
+                  orderDetails: 'Owner',
+                  createdBy: 'Khushboo',
+                  orderDate: new Date().getTime(),
+                  status: 'failed',
+                  consultant: "",
+                  orderID: 'Term Loan',
+                  sourceName: 'Bank Account',
+                  sourceDesc: '*** 1111',
+                  amountCrypto: ' ',
+                  cryptoCurrency: '0',
+                  currency: '₹',
+                  ...data
+                }]
+              })
+            }}
 
           >
             Submit
