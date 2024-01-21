@@ -24,7 +24,8 @@ const Component = (props) => {
         value={selectedNames}
         onChange={(e:any) => setSelectedNames(e.target.value)}
         renderValue={(selected) => (
-          <Stack direction="row" flexWrap="nowrap" sx={{
+          <Stack direction="row" flexWrap="nowrap" 
+          sx={{
             overflow: "auto",
             scrollbarWidth: "none", 
             '&::-webkit-scrollbar': {
@@ -79,7 +80,7 @@ export const Upload = ({
       const files = event.target.files;
       const urls = [];
 
-      Array.from(files).forEach(file => {
+      Array.from(files).forEach((file:any) => {
           const reader = new FileReader();
           reader.onloadend = () => {
               urls.push(reader.result);
