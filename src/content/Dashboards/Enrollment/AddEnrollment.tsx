@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Avatar, Box, Button, Dialog, DialogTitle, Grid, List, ListItem, ListItemAvatar, ListItemButton, ListItemText, Typography } from '@mui/material';
-import { Add, Label } from '@mui/icons-material';
+import {  Box, Button, Dialog, List, ListItem, Typography } from '@mui/material';
 import EnrollmentBG from '../../../../public/static/images/background/enrollment1.svg';
 import EnrollmentCoinBG from '../../../../public/static/images/background/enrollment2.svg';
 import Image from 'next/image';

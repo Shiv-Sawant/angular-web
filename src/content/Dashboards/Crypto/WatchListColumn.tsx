@@ -8,7 +8,6 @@ import {
   useTheme,
   styled
 } from '@mui/material';
-import Label from 'src/components/Label';
 import Text from 'src/components/Text';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';

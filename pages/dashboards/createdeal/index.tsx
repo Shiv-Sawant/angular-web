@@ -1,15 +1,8 @@
 import Head from 'next/head';
 
 import SidebarLayout from '@/layouts/SidebarLayout';
-import PageTitleWrapper from '@/components/PageTitleWrapper';
-import PageHeader from '@/content/Dashboards/CreateDeal/PageHeader';
 import { Container, Grid } from '@mui/material';
-import Forms from 'pages/components/forms';
-import CreateForm from '@/content/Dashboards/CreateDeal/Form';
-import Buttons from 'pages/components/buttons';
-import EditForm from '@/content/Dashboards/CreateDeal/EditForm';
 import CreatedDealTable from '@/content/Dashboards/CreateDeal/CreatedDealTable';
-import { subDays } from 'date-fns';
 import { CryptoOrder } from '@/models/crypto_order';
 import { useEffect, useState } from 'react';
 import CreateDealButton from '@/content/Dashboards/CreateDeal/CreateDealButton';

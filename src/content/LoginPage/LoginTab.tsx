@@ -1,7 +1,5 @@
 import { AppBar, Card, Tab, Tabs } from '@mui/material';
 import React, { useState } from 'react';
-
-import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
 import EmailLogin from './EmailLogin';
 import PhoneLogin from './PhoneLogin';

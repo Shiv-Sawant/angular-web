@@ -1,17 +1,14 @@
-import { Box, Button, Card, CardContent, Dialog, Divider, FormControl, Grid, IconButton, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Dialog, Divider, Grid, IconButton, MenuItem, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { currencies } from '../../../../pages/profile';
-import Component, { Upload } from './Component';
+import  { Upload } from './Component';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import { ro } from 'date-fns/locale';
 import { Cancel } from '@mui/icons-material';
 
 const EnrollmentForm = ({ open, setOpen }) => {
   const [currency, setCurrency] = useState('EUR');
   const [currency_two, setCurrency_two] = useState('EUR');
-  const [selectedProductValue, setSelectedProductValue] = useState('');
-  const [selectedSubValue, setSelectedSubValue] = useState('');
   const [inputs, setInputs] = useState([])
   const router = useRouter()
   const [selectedFile, setSelectedFile] = useState<any>([])

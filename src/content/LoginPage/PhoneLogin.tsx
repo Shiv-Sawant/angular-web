@@ -1,13 +1,11 @@
-  'use client'
+'use client'
 
-import { Box, Button, Grid, Link, TextField } from '@mui/material'
-import React, { useEffect } from 'react'
+import { Box, Button, TextField } from '@mui/material'
+import React from 'react'
 
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-import app from "../../firebase";
-import { signInWithPhoneNumber, RecaptchaVerifier, getAuth } from 'firebase/auth';
 
 const PhoneLogin = () => {
   const router = useRouter();
@@ -15,7 +13,6 @@ const PhoneLogin = () => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [showOtpField, setShowOtpField] = useState(false);
-  const auth = getAuth(app)
 
   const handleAction = async () => {
     if (showOtpField) {

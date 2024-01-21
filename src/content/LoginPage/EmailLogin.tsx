@@ -1,10 +1,9 @@
-import { Box, Button, Grid, Link, TextField } from '@mui/material'
+import { Box, Button, TextField } from '@mui/material'
 import React from 'react'
 import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from 'axios'
 import RingLoader from "react-spinners/RingLoader"
-// import FadeLoader from 'react-spinners'
 
 const EmailLogin = () => {
   const router = useRouter();

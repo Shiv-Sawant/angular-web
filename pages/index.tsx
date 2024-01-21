@@ -14,25 +14,7 @@ import BaseLayout from 'src/layouts/BaseLayout';
 import Link from 'src/components/Link';
 import Head from 'next/head';
 
-import Logo from 'src/components/LogoSign';
-import Hero from 'src/content/Overview/Hero';
 import LoginCard from '@/content/LoginPage/LoginCard';
-import Documentation from '@/content/LoginPage/Documentation';
-
-import Image from 'next/image';
-
-
-
-
-const HeaderWrapper = styled(Card)(
-  ({ theme }) => `
-  width: 100%;
-  display: flex;
-  align-items: center;
-  height: ${theme.spacing(8)};
-  margin-bottom: ${theme.spacing(2)};
-`
-);
 
 const OverviewWrapper = styled(Box)(
   ({ theme }) => `
@@ -58,25 +40,6 @@ function Overview() {
           flex={1}
         >
           <Box display={"flex"}>
-            {/* <Grid>
-                  <Documentation/>
-                </Grid>
-                <Button
-                  // component={Link}
-                  href="/api/auth/login"
-                  variant="contained"
-                  sx={{ ml: 2 }}
-                >
-                  Register
-                </Button> */}
-            {/* <Button
-                  component={Link}
-                  href="/api/auth/logout"
-                  variant="contained"
-                  sx={{ ml: 2 }}
-                >
-                  Logout
-                </Button> */}
           </Box>
         </Box>
       </Box>

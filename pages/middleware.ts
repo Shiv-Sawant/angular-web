@@ -1,4 +1,3 @@
-import { AppRouteHandlerFn } from '@auth0/nextjs-auth0';
 import dbConnect from './mongoose/db';
 
 export const withMongoose = (fn: any): any => {

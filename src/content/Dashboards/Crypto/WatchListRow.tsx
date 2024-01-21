@@ -15,9 +15,7 @@ import Text from 'src/components/Text';
 import Label from 'src/components/Label';
 import { Chart } from 'src/components/Chart';
 import type { ApexOptions } from 'apexcharts';
-import TrendingDownTwoToneIcon from '@mui/icons-material/TrendingDownTwoTone';
 import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
-import TrendingFlatTwoToneIcon from '@mui/icons-material/TrendingFlatTwoTone';
 import { FcDebt } from 'react-icons/fc';
 
 const AvatarWrapper = styled(Avatar)(

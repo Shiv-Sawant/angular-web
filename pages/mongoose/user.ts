@@ -1,4 +1,4 @@
-import mongoose, { Schema, Types } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import './enrollment';
 const UserSchema = new mongoose.Schema({
   _id: String,

@@ -1,12 +1,9 @@
 'use client'
 
-import { Box, Button, Dialog, List, ListItem, Typography } from '@mui/material'
+import { Box, Button, Dialog, List, Typography } from '@mui/material'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import EnrollAsBG from '@/public/static/images/background/EnrollAsBg.svg'
-import EnrollAsBG1 from '@/public/static/images/background/enrollment2.svg'
-import { useUser } from '@auth0/nextjs-auth0/client'
-import Cookies from 'js-cookie'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 

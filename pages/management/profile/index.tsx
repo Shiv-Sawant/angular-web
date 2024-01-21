@@ -1,17 +1,8 @@
 import Head from 'next/head';
 import SidebarLayout from '@/layouts/SidebarLayout';
-// import Footer from '@/components/Footer';
 import { Grid, Container } from '@mui/material';
 import ProfileCover from '@/content/Management/Users/details/ProfileCover';
 import RecentActivity from '@/content/Management/Users/details/RecentActivity';
-import Feed from '@/content/Management/Users/details/Feed';
-import PopularTags from '@/content/Management/Users/details/PopularTags';
-import MyCards from '@/content/Management/Users/details/MyCards';
-import Addresses from '@/content/Management/Users/details/Addresses';
-import Forms from 'pages/components/forms';
-import ProfileForm from 'pages/profile';
-import EnrollmentForm from '@/content/Dashboards/Enrollment/EnrollmentForm';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 
