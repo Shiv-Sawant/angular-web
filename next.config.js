@@ -1,6 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  distDir:"build"
-}
+const withImages = require('next-images');
 
-module.exports = nextConfig
+const redirects = {
+  async redirects() {
+    return [
+      {
+        source: '/dashboards',
+        destination: '/dashboards/crypto',
+        permanent: true
+      }
+    ];
+  }
+};
+
+module.exports = withImages(redirects);
