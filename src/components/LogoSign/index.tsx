@@ -1,10 +1,8 @@
 import {
-  Box,
   Tooltip,
   TooltipProps,
   tooltipClasses,
   styled,
-  useTheme
 } from '@mui/material';
 import Link from 'src/components/Link';
 
