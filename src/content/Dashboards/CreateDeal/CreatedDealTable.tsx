@@ -74,7 +74,7 @@ const CreatedDealTable: FC<any> = ({ cryptoOrderss }: any) => {
   ): void => {
     setSelectedCryptoOrders(
       event.target.checked
-        ? cryptoOrders.map((cryptoOrder) => cryptoOrder.id)
+        ? cryptoOrderss.map((cryptoOrder) => cryptoOrder.id)
         : []
     );
   };
