@@ -1,6 +1,6 @@
 const { google } = require('googleapis')
 const nodemailer = require('nodemailer')
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient } = require("mongodb");
 
 export default async function handler(req: any, res: any) {
     if (req.method === 'POST') {
