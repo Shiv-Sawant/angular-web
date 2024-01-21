@@ -1,6 +1,5 @@
-import mongoose, { Schema, Types } from 'mongoose';
+import mongoose from 'mongoose';
 import './product';
-import User from '../user';
 
 export const DealSchema = new mongoose.Schema({
   User: String,
