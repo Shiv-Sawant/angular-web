@@ -1,8 +1,8 @@
-import { ManagementClient } from 'auth0';
+var ManagementClient = require('auth0').ManagementClient;
 
-export const auth0ManagementClient = new ManagementClient({
-  domain: `${process.env.AUTH0_ACCOUNT}.auth0.com`,
-  clientId: process.env.AUTH0_CLIENT_ID,
-  clientSecret: process.env.AUTH0_CLIENT_SECRET,
+export const auth0ManagementClient: any = new ManagementClient({
+  domain: 'dev-ngvx2oexcw8osiwo.us.auth0.com',
+  clientId: 'vzKlbT0aO6i8xyKfTaLalzHG9ol8brzS',
+  clientSecret: 'ifDDuJ5O31pqrXqczF-IFrTz2Tpg7YnsCKVGK6wusNofmSmtUyEe6nxFtbPLgAqU',
   scope: 'read:users update:users'
 });
