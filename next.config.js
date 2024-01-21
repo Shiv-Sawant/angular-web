@@ -12,4 +12,19 @@ const redirects = {
   }
 };
 
-module.exports = withImages(redirects);
+const nextConfig = {
+  reactStrictMode: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+      },
+    ],
+  },
+  experimental: {
+    serverActions: true,
+  },
+}
+
+module.exports = [withImages(redirects), nextConfig];

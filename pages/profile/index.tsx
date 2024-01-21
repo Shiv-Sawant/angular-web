@@ -25,7 +25,6 @@ export const currencies = [
   }
 ];
 const ProfileForm = () => {
-  const [currency, setCurrency] = useState('EUR');
   const [profile, setProfile] = useState([])
   const router = useRouter()
 
@@ -41,9 +40,8 @@ const ProfileForm = () => {
     try {
       console.log('handle profile')
       let userId = localStorage.getItem('user id')
-      const response = await axios.put(`http://localhost:3000/api/profile?id=${userId}`, { profile, enrollStatus: 'no' })
+      await axios.put(`http://localhost:3000/api/profile?id=${userId}`, { profile, enrollStatus: 'no' })
       localStorage.setItem('user-profile', JSON.stringify(profile))
-      // localStorage.setItem('user-id', JSON.stringify(response.data.data.insertedId))
       localStorage.setItem('enroll-status', "no")
       router.push('/enrolas')
     } catch (e) {
@@ -139,7 +137,7 @@ const ProfileForm = () => {
                 select
                 label="Company Type"
                 name='CompanyType'
-                value={currency}
+                value='EUR'
                 onChange={handleInput}
                 sx={{ bgcolor: "white" }}
                 variant='filled'
@@ -157,7 +155,7 @@ const ProfileForm = () => {
                 select
                 label="City"
                 name='City'
-                value={currency}
+                value='EUR'
                 onChange={handleInput}
                 sx={{ bgcolor: "white" }}
                 variant='filled'
