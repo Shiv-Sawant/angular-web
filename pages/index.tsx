@@ -1,17 +1,10 @@
 import {
-  Typography,
   Box,
-  Card,
-  Container,
-  Button,
   styled,
-  Paper,
-  Grid
 } from '@mui/material';
 import type { ReactElement } from 'react';
 import BaseLayout from 'src/layouts/BaseLayout';
 
-import Link from 'src/components/Link';
 import Head from 'next/head';
 
 import LoginCard from '@/content/LoginPage/LoginCard';
