@@ -1,12 +1,13 @@
 import Text from '@/components/Text'
-import { Box, Card, CardContent, Dialog, Grid, IconButton, Modal, Typography } from '@mui/material'
+import { Box, Card, CardContent, Dialog, Grid, IconButton, Typography } from '@mui/material'
 import React from 'react'
 import InterestedUserTable from './InterestedUserTable'
 import { Cancel } from '@mui/icons-material'
 
 const InterestedUser = ({open, data, setOpen, selectedIndex}) => {
   return (
-    <Dialog maxWidth="lg" fullWidth open={open} onClose={()=> {
+    <Dialog maxWidth="lg" fullWidth 
+    open={open} onClose={()=> {
         setOpen(false)
       }}>
         <Card sx={{p:5}}>
