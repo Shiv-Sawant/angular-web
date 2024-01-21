@@ -1,17 +1,13 @@
 // Import the necessary components and hooks
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Avatar, Container, IconButton } from "@mui/material";
+import {  Container } from "@mui/material";
 import Logo from "../../../public/static/images/logo/VisionLogo.svg";
 import LoginTab from "./LoginTab";
 import BGLogin from '@/public/static/images/background/bgloginfolder.svg'
-import { makeStyles } from "@mui/styles";
 import Documentation from "./Documentation";
-import ExitToAppTwoToneIcon from '@mui/icons-material/ExitToAppTwoTone';
 
 export default function LoginCard() {
   return (
@@ -39,15 +35,6 @@ export default function LoginCard() {
                 justifyContent: "space-evenly",
                 alignItems: "center",
               }}>
-                {/* <Button
-                  href="/api/auth/login"
-                  variant="text"
-                >
-                  <Avatar sx={{ '&:hover': { backgroundColor: "transparent" }, bgcolor: "transparent" }}>
-                    <ExitToAppTwoToneIcon />
-                  </Avatar>
-                  Register
-                </Button> */}
                 <Grid sx={{ display: "flex" }}>
                   <Documentation />
 

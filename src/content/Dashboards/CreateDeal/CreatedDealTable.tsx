@@ -20,10 +20,8 @@ import {
   useTheme,
   CardHeader,
   TextField,
-  InputAdornment
 } from '@mui/material';
 
-import Label from '@/components/Label';
 import { CryptoOrder, CryptoOrderStatus } from '@/models/crypto_order';
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import PermIdentityTwoToneIcon from '@mui/icons-material/PermIdentityTwoTone';
@@ -36,40 +34,10 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 
-
-interface CreatedDealTableProps {
-  className?: string;
-  cryptoOrders: CryptoOrder[];
-}
-
 interface Filters {
   status?: CryptoOrderStatus;
 }
 
-const getStatusLabel = (cryptoOrderStatus: CryptoOrderStatus): JSX.Element => {
-  const map = {
-    failed: {
-      text: 'Failed',
-      color: 'error'
-    },
-    completed: {
-      text: 'Completed',
-      color: 'success'
-    },
-    pending: {
-      text: 'Pending',
-      color: 'warning'
-    },
-    inprogress: {
-      text: 'In Progress',
-      color: 'blue'
-    }
-  };
-
-  const { text, color }: any = map[cryptoOrderStatus];
-
-  return <Label color={color}>{text}</Label>;
-};
 
 const applyFilters = (
   cryptoOrders: CryptoOrder[],
@@ -86,15 +54,7 @@ const applyFilters = (
   });
 };
 
-const applyPagination = (
-  cryptoOrders: CryptoOrder[],
-  page: number,
-  limit: number
-): CryptoOrder[] => {
-  return cryptoOrders.slice(page * limit, page * limit + limit);
-};
-
-const CreatedDealTable: FC<any> = ({ cryptoOrders, isDealCreate }) => {
+const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
 
   const [selectedCryptoOrders, setSelectedCryptoOrders] = useState<string[]>(
     []
@@ -113,43 +73,6 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders, isDealCreate }) => {
     status: null
   });
 
-  const statusOptions = [
-    {
-      id: 'all',
-      name: 'All'
-    },
-    {
-      id: 'completed',
-      name: 'Completed'
-    },
-    {
-      id: 'pending',
-      name: 'Pending'
-    },
-    {
-      id: 'failed',
-      name: 'Failed'
-    },
-    {
-      id: 'inprogress',
-      name: 'In Progress'
-    }
-
-  ];
-
-  const handleStatusChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    let value = null;
-
-    if (e.target.value !== 'all') {
-      value = e.target.value;
-    }
-
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      status: value
-    }));
-  };
-
   const handleSelectAllCryptoOrders = (
     event: ChangeEvent<HTMLInputElement>
   ): void => {
@@ -158,22 +81,6 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders, isDealCreate }) => {
         ? cryptoOrders.map((cryptoOrder) => cryptoOrder.id)
         : []
     );
-  };
-
-  const handleSelectOneCryptoOrder = (
-    _event: ChangeEvent<HTMLInputElement>,
-    cryptoOrderId: string
-  ): void => {
-    if (!selectedCryptoOrders.includes(cryptoOrderId)) {
-      setSelectedCryptoOrders((prevSelected) => [
-        ...prevSelected,
-        cryptoOrderId
-      ]);
-    } else {
-      setSelectedCryptoOrders((prevSelected) =>
-        prevSelected.filter((id) => id !== cryptoOrderId)
-      );
-    }
   };
 
   const handlePageChange = (_event: any, newPage: number): void => {
@@ -185,17 +92,11 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders, isDealCreate }) => {
   };
 
 
-  const [paginatedCryptoOrders, setpaginatedCryptoOrders] = useState([])
   const [filteredCryptoOrders, setfilteredCryptoOrders] = useState([])
 
   useEffect(() => {
     const filter_data = applyFilters(cryptoOrders, filters)
     setfilteredCryptoOrders(filter_data);
-    setpaginatedCryptoOrders(applyPagination(
-      filter_data,
-      page,
-      limit
-    ));
   }, [cryptoOrders])
 
   const selectedSomeCryptoOrders =
@@ -263,41 +164,22 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders, isDealCreate }) => {
           <CardHeader
             action={
               <Box width={"100%"} display={"flex"} alignItems={"center"} gap={2} >
-                {/* <IconButton>
-                  <AddBox />
-                </IconButton> */}
                 <FormControl fullWidth variant="outlined">
                   {search}
                   <TextField
-                    onChange={(e) => {
+                    onChange={(e:any) => {
                       setSearch(e.target.value)
                     }}
                     label="Search"
                     variant='outlined'
                     InputProps={{
                       startAdornment: (
-                        <InputAdornment>
                           <Search />
-                        </InputAdornment>
                       )
                     }}
                   />
                 </FormControl>
-                {/* <FormControl fullWidth variant="outlined">
-                  <InputLabel>Status</InputLabel>
-                  <Select
-                    value={filters.status || 'all'}
-                    onChange={handleStatusChange}
-                    label="Status"
-                    autoWidth
-                  >
-                    {statusOptions.map((statusOption) => (
-                      <MenuItem key={statusOption.id} value={statusOption.id}>
-                        {statusOption.name}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl> */}
+                
               </Box>
             }
             title="Recent Orders"

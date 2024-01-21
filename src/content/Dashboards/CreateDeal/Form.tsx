@@ -1,32 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import {
   Card,
-  CardHeader,
-  List,
   Divider,
-  Switch,
   TextField,
   Button,
-  Container,
   Grid,
   CardContent,
   Box,
   MenuItem,
   Typography,
-  FormLabel,
-  InputLabel,
-  Modal,
   Dialog,
-  Avatar
 } from '@mui/material';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { createDeal } from "./CreateDealSlice";
 
-
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
 const currencies = [
   {
     value: 'Co-Landing',
@@ -58,7 +46,6 @@ function CreateForm({ setList, open, createDeal, setOpen2, }) {
     setCurrency(e.target.value);
   };
 
-  const dispatch = useDispatch()
 
   const handleSubmit = async () => {
     try {

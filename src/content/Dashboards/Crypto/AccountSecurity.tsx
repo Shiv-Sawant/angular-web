@@ -5,14 +5,9 @@ import {
   List,
   ListItem,
   Divider,
-  Avatar,
-  styled
 } from '@mui/material';
 
 function AccountSecurity() {
-  const [checked, setChecked] = useState(['phone_verification']);
-
-
   return (
     <Card>
       <CardHeader title="Our Website" />

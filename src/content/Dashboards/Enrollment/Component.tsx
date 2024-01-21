@@ -22,7 +22,7 @@ const Component = (props) => {
       <Select
         multiple
         value={selectedNames}
-        onChange={(e) => setSelectedNames(e.target.value)}
+        onChange={(e:any) => setSelectedNames(e.target.value)}
         renderValue={(selected) => (
           <Stack direction="row" flexWrap="nowrap" sx={{
             overflow: "auto",

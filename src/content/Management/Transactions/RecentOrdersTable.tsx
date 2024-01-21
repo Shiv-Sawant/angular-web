@@ -1,6 +1,5 @@
 import { FC, ChangeEvent, useState } from 'react';
 import { format } from 'date-fns';
-import numeral from 'numeral';
 import PropTypes from 'prop-types';
 import {
   Tooltip,
@@ -27,9 +26,6 @@ import {
 
 import Label from '@/components/Label';
 import { CryptoOrder, CryptoOrderStatus } from '@/models/crypto_order';
-import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import BulkActions from './BulkActions';
 import RecommendIcon from '@mui/icons-material/Recommend';
 import InterestedUser from './InterestedUser';
 
@@ -282,13 +278,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                       noWrap
                     >
                       {cryptoOrder.amountCrypto} Crores
-                      {/* {cryptoOrder.cryptoCurrency} */}
                     </Typography>
-                    {/* <Typography variant="body2" color="text.secondary" noWrap>
-                      {numeral(cryptoOrder.amount).format(
-                        `${cryptoOrder.currency}0,0.00`
-                      )}
-                    </Typography> */}
                   </TableCell>
                     <TableCell align='center'>
                     <Typography
@@ -300,9 +290,6 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                     >
                       {cryptoOrder.sourceDesc}
                     </Typography>
-                    {/* <Typography variant="body2" color="text.secondary" noWrap>
-                      {cryptoOrder.sourceDesc}
-                    </Typography> */}
                   </TableCell>
                   <TableCell align="center">
                     {getStatusLabel(cryptoOrder.status)}
@@ -327,18 +314,6 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                         {/* Inter */}
                       </IconButton>
                     </Tooltip>
-                    {/* <Tooltip title="Delete Order" arrow>
-                      <IconButton
-                        sx={{
-                          '&:hover': { background: theme.colors.error.lighter },
-                          color: theme.palette.error.main
-                        }}
-                        color="inherit"
-                        size="small"
-                      >
-                        <DeleteTwoToneIcon fontSize="small" />
-                      </IconButton>
-                    </Tooltip> */}
                   </TableCell>
                 </TableRow>
               );

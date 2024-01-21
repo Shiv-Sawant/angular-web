@@ -7,11 +7,8 @@ import axios from 'axios';
 import { Cancel } from '@mui/icons-material';
 
 const EnrollmentForm = ({ open, setOpen }) => {
-  const [currency, setCurrency] = useState('EUR');
-  const [currency_two, setCurrency_two] = useState('EUR');
   const [inputs, setInputs] = useState([])
   const router = useRouter()
-  const [selectedFile, setSelectedFile] = useState<any>([])
   const [uploadedFiles, setUploadedFiles] = useState({
     file1: [],
     file2: [],
@@ -22,7 +19,6 @@ const EnrollmentForm = ({ open, setOpen }) => {
     file7: [],
   });
 
-  console.log(selectedFile, "selectedFile")
 
   const handleFilesUpload = (field, files) => {
     setUploadedFiles({
@@ -32,11 +28,6 @@ const EnrollmentForm = ({ open, setOpen }) => {
     console.log(uploadedFiles)
   };
 
-
-
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
-  };
 
 
   const handleInput = (e: any) => {
@@ -59,7 +50,7 @@ const EnrollmentForm = ({ open, setOpen }) => {
         enrollStatus: "yes",
         files: uploadedFiles
       }
-      const res = await axios.put(`http://localhost:3000/api/users/userEnrol?id=${id}`, obj)
+       await axios.put(`http://localhost:3000/api/users/userEnrol?id=${id}`, obj)
       localStorage.setItem("enroll-status", "yes")
       // setEnrollData(res.data.data.enrollment)
       alert("updated enrollment")
@@ -68,11 +59,6 @@ const EnrollmentForm = ({ open, setOpen }) => {
       console.log(error)
     }
   }
-  const handleChange_tow = (event) => {
-    setCurrency_two(event.target.value);
-  };
-
-  const [value, setValue] = useState(30);
   return (
     <Dialog open={open} maxWidth={"md"} fullWidth onClose={() => { setOpen(false) }}>
       <Grid item xs={12} position={"relative"} overflow={"hidden"} sx={{ padding: 5 }}  >

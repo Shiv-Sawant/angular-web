@@ -15,15 +15,7 @@ function PageHeader() {
           {user.name}, these are recent demands
         </Typography>
       </Grid>
-      {/* <Grid item>
-        <Button
-          sx={{ mt: { xs: 2, md: 0 } }}
-          variant="contained"
-          startIcon={<AddTwoToneIcon fontSize="small" />}
-        >
-          Create transaction
-        </Button>
-      </Grid> */}
+      
     </Grid>
   );
 }

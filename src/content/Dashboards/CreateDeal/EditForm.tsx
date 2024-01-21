@@ -3,7 +3,7 @@ import React from 'react'
 
 import Text from '@/components/Text';
 
-const EditForm = ({ open, data, setOpen, selectedIndex }) => {
+const EditForm = ({ open, setOpen, selectedIndex }) => {
   console.log(selectedIndex, "all selected index")
 
   function convertMillisecondsToDate(milliseconds) {

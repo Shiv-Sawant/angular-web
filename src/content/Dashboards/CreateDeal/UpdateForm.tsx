@@ -1,29 +1,20 @@
 import { useEffect, useState } from 'react';
 import {
   Card,
-  CardHeader,
-  List,
   Divider,
-  Switch,
   TextField,
   Button,
-  Container,
   Grid,
   CardContent,
   Box,
   MenuItem,
   Typography,
-  FormLabel,
-  InputLabel,
-  Modal,
   Dialog,
-  Avatar
 } from '@mui/material';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import axios from 'axios';
 
 
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
 const currencies = [
   {
     value: 'Co-Landing',

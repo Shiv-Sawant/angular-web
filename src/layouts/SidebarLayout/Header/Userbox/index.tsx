@@ -23,8 +23,6 @@ import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
-import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
-import Link from '@/components/Link';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
@@ -95,9 +93,9 @@ function HeaderUserbox() {
     <>
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
         {/* <Avatar variant="rounded" alt={user.name} src={user.avatar} /> */}
-        <Avatar variant="rounded" alt={user.name} src={<FaUserAlt />} />
-        
-        
+        <Avatar variant="rounded" alt={user.name} src={`${<FaUserAlt />}`} />
+
+
         <Hidden mdDown>
           <UserBoxText>
             <UserBoxLabel variant="body1">{name}</UserBoxLabel>
