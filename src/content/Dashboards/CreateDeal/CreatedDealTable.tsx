@@ -68,10 +68,6 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
   const [selectedIndex, setSelectedId] = useState<number>(0);
   const [createdeals, setCreatedeals] = useState<any>([])
   const [isUpdate, setIsUpadte] = useState<any>([])
-  // const [isDealCreate, setIsDealCreate] = useState<boolean>(false)
-  const [filters, setFilters] = useState<Filters>({
-    status: null
-  });
 
   const handleSelectAllCryptoOrders = (
     event: ChangeEvent<HTMLInputElement>
@@ -95,7 +91,7 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
   const [filteredCryptoOrders, setfilteredCryptoOrders] = useState([])
 
   useEffect(() => {
-    const filter_data = applyFilters(cryptoOrders, filters)
+    const filter_data = applyFilters(cryptoOrders, null)
     setfilteredCryptoOrders(filter_data);
   }, [cryptoOrders])
 
