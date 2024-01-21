@@ -1,15 +1,17 @@
-const withImages = require('next-images');
-
-const redirects = {
-  async redirects() {
-    return [
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false,
+  images: {
+    remotePatterns: [
       {
-        source: '/dashboards',
-        destination: '/dashboards/crypto',
-        permanent: true
-      }
-    ];
-  }
-};
+        protocol: "https",
+        hostname: "img.freepik.com",
+      },
+    ],
+  },
+  experimental: {
+    serverActions: true,
+  },
+}
 
-module.exports = withImages(redirects);
+module.exports = nextConfig

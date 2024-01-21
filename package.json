@@ -52,7 +52,8 @@
     "react-router-dom": "^6.21.0",
     "react-spinner": "^0.2.7",
     "react-spinners": "^0.13.8",
-    "typescript": "4.7.3"
+    "typescript": "4.7.3",
+    "vercel": "^33.2.0"
   },
   "scripts": {
     "dev": "next",
