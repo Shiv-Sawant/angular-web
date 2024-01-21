@@ -85,7 +85,7 @@ function DashboardCreatDeal() {
             <CreateDealButton createDeal={createDeal} setList={setList} />
           </Grid>
           <Grid item xs={12} lg={12}>
-            <CreatedDealTable isDealCreate={isDealCreate} cryptoOrders={filterDataAndLastSevenDaysData({ accessor: "orderDate", data: list })} />
+            <CreatedDealTable isDealCreate={isDealCreate} cryptoOrderss={filterDataAndLastSevenDaysData({ accessor: "orderDate", data: list })} />
           </Grid>
         </Grid>
       </Container>

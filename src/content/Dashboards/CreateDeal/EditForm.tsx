@@ -3,7 +3,7 @@ import React from 'react'
 
 import Text from '@/components/Text';
 
-const EditForm = ({ open, setOpen, selectedIndex }) => {
+const EditForm = ({  open, setOpen, selectedIndex }) => {
   console.log(selectedIndex, "all selected index")
 
   function convertMillisecondsToDate(milliseconds) {
@@ -25,12 +25,12 @@ const EditForm = ({ open, setOpen, selectedIndex }) => {
     return formattedDate;
   }
   return (
-    <Modal open={open} onClose={()=> {
+    <Modal open={open} onClose={() => {
       setOpen(false)
     }}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-        <Card>
+          <Card>
             <Box
               p={3}
               display="flex"
@@ -53,7 +53,7 @@ const EditForm = ({ open, setOpen, selectedIndex }) => {
             <CardContent sx={{ p: 4 }}>
               <Typography variant="subtitle2">
                 <Grid container spacing={0}>
-                  
+
                   <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
                     <Box pr={3} pb={2}>
                       Deal Created By
@@ -96,13 +96,13 @@ const EditForm = ({ open, setOpen, selectedIndex }) => {
                   </Grid>
                   <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
                     <Box pr={3} pb={2}>
-                    Consultant
+                      Consultant
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={8} md={9}>
                     <Box sx={{ maxWidth: { xs: 'auto', sm: 300 } }}>
                       <Text color="black">
-                       {selectedIndex?.consultant}
+                        {selectedIndex?.consultant}
                       </Text>
                     </Box>
                   </Grid>
@@ -110,7 +110,7 @@ const EditForm = ({ open, setOpen, selectedIndex }) => {
               </Typography>
             </CardContent>
           </Card>
-            </Grid>
+        </Grid>
       </Grid>
     </Modal>
   )

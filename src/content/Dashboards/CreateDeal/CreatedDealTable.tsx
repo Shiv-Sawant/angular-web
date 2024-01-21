@@ -29,7 +29,7 @@ import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import BulkActions from '../../Management/Transactions/BulkActions';
 import EditForm from './EditForm';
 import UpdateForm from './UpdateForm';
-import {  Search } from '@mui/icons-material';
+import { Search } from '@mui/icons-material';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
@@ -54,7 +54,7 @@ const applyFilters = (
   });
 };
 
-const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
+const CreatedDealTable: FC<any> = ({ cryptoOrderss }: any) => {
 
   const [selectedCryptoOrders, setSelectedCryptoOrders] = useState<string[]>(
     []
@@ -91,15 +91,15 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
   const [filteredCryptoOrders, setfilteredCryptoOrders] = useState([])
 
   useEffect(() => {
-    const filter_data = applyFilters(cryptoOrders, null)
+    const filter_data = applyFilters(cryptoOrderss, null)
     setfilteredCryptoOrders(filter_data);
-  }, [cryptoOrders])
+  }, [cryptoOrderss])
 
   const selectedSomeCryptoOrders =
     selectedCryptoOrders.length > 0 &&
-    selectedCryptoOrders.length < cryptoOrders.length;
+    selectedCryptoOrders.length < cryptoOrderss.length;
   const selectedAllCryptoOrders =
-    selectedCryptoOrders.length === cryptoOrders.length;
+    selectedCryptoOrders.length === cryptoOrderss.length;
   const theme = useTheme();
 
   const [search, setSearch] = useState([])
@@ -130,7 +130,7 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
 
   const fetchRecentDeals = async () => {
     try {
-      const userid=localStorage.getItem("user id")
+      const userid = localStorage.getItem("user id")
       const res = await axios.get(`http://localhost:3000/api/deal?id=${userid}`)
       console.log(res, "create deas response")
       setCreatedeals(res?.data)
@@ -148,7 +148,7 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
   }, [deletestatus, data])
   return (
     <>
-      <EditForm data={cryptoOrders} open={open} setOpen={setOpen} selectedIndex={selectedIndex} />
+      <EditForm  open={open} setOpen={setOpen} selectedIndex={selectedIndex} />
       <UpdateForm update={isUpdate} openNew={openNew} setOpenNew={setOpenNew} setList={() => { }} />
       <Card>
         {selectedBulkActions && (
@@ -163,19 +163,19 @@ const CreatedDealTable: FC<any> = ({ cryptoOrders }) => {
                 <FormControl fullWidth variant="outlined">
                   {search}
                   <TextField
-                    onChange={(e:any) => {
+                    onChange={(e: any) => {
                       setSearch(e.target.value)
                     }}
                     label="Search"
                     variant='outlined'
                     InputProps={{
                       startAdornment: (
-                          <Search />
+                        <Search />
                       )
                     }}
                   />
                 </FormControl>
-                
+
               </Box>
             }
             title="Recent Orders"
