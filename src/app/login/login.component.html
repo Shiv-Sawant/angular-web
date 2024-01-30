@@ -1,0 +1,24 @@
+<label for="">Username</label
+><input
+  type="text"
+  id="Username"
+  name="Username"
+  placeholder="Username"
+  ngDefaultControl
+  [(ngModel)]="Username"
+/>
+<br />
+<br />
+<label for="">Password</label>
+<input
+  type="text"
+  id="Password"
+  name="Password"
+  placeholder="Password"
+  ngDefaultControl
+  [(ngModel)]="Password"
+/>
+<br />
+<br />
+<button (click)="submitModel()">Submit</button>
+<p>{{ errorMsg }}</p>

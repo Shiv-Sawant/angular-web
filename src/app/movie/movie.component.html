@@ -1,0 +1,12 @@
+<p>movie works!</p>
+<div style="display: flex; gap: 1rem; flex-direction: column">
+  <div
+    *ngFor="let user of users"
+    style="display: flex; gap: 2rem; flex-direction: row"
+  >
+    <p (click)="goToUser('movie', user.id)" style="display: flex; flex-direction: row">{{ user.name }}</p>
+    <p >{{ user.email }}</p>
+    <p>{{ user.phone }}</p>
+    <p>{{ user.website }}</p>
+  </div>
+</div>
